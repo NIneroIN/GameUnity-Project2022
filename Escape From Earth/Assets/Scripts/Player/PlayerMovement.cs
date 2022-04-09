@@ -18,17 +18,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        extraJump = countJump;
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         // Прыжок
+        
         if (isGrounded)
         {
+            extraJump = countJump;
             if (Input.GetKeyDown(KeyCode.W))
             {
-                extraJump = countJump;
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
         }
