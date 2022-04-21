@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public Image bar;
-    public float fill;
-    public float maxFill;
+    float fill;
+    float maxFill;
+    Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxFill = transform.GetComponentInParent<Enemy>().GetMaxHealth();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        maxFill = player.GetComponent<PlayerBase>().GetMaxHealth();
     }
 
     // Update is called once per frame
     void Update()
     {
-        fill = transform.GetComponentInParent<Enemy>().GetHealth();
+        fill = player.GetComponent<PlayerBase>().GetHealth();
         bar.fillAmount = (fill * 100) / (100 * maxFill);
     }
 }

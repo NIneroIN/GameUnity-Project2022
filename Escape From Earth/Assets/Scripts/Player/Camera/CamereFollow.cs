@@ -8,6 +8,11 @@ public class CamereFollow : MonoBehaviour
     private float smooth = 1f;
     private Vector3 offset= new Vector3(15, 3, -20);
 
+    private void Start()
+    {
+        transform.position = player.transform.position;
+    }
+
     private void Update()
     {
         if (!player.GetComponent<PlayerMovement>().isGrounded)

@@ -2,36 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
-    public float health = 10;
+    [Header("health")]
+    public float maxHealth = 10;
+    public float currentHealth;
 
-    public void TakeDamage()
-    {
-        health--;
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
+    public abstract void TakeDamage(float damage);
 
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+    public abstract float GetHealth();
 
-    public float GetHealth() => health;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public abstract float GetMaxHealth();
 }

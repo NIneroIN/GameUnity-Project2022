@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoRifle : MonoBehaviour
+public class AmmoTurret : MonoBehaviour
 {
     public float speed;
     public float damage;
@@ -10,7 +10,7 @@ public class AmmoRifle : MonoBehaviour
 
     void Start()
     {
-        Invoke("DestroyAmmo", destroyTime / 10); 
+        Invoke("DestroyAmmo", destroyTime / 10);
     }
 
     // Update is called once per frame
@@ -19,13 +19,13 @@ public class AmmoRifle : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("GroundDetect") && !collision.CompareTag("BulletTransparent"))
+        if (!collision.CompareTag("Enemy") && !collision.CompareTag("BulletTransparent"))
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Player"))
             {
-                collision.GetComponent<Enemy>().TakeDamage(damage);
+                collision.GetComponent<PlayerBase>().TakeDamage(damage);
             }
             DestroyAmmo();
         }

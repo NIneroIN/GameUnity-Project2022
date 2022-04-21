@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6359774152354825443}
   - component: {fileID: 3046625651392289237}
   - component: {fileID: 6560867117575199620}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ammoPistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 1
   destroyTime: 10
 --- !u!50 &3046625651392289237
 Rigidbody2D:
