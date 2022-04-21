@@ -17,6 +17,8 @@ public class Rifle : MonoBehaviour
     private float shootTime;
     public float shootStartTime;
 
+    public float rotateZ;
+
     [SerializeField]
 
     public Text ammoText;
@@ -41,8 +43,11 @@ public class Rifle : MonoBehaviour
     {
         // Поворот с оружием
         Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotateZ);
+        if (Mathf.Abs(rotateZ) > 90)
+            transform.Rotate(180, 0, 0);
+
 
         // Выстрел
         if (ammoCount > 0 && !isReload)

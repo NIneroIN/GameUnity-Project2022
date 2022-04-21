@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletsShootgun : MonoBehaviour
 {
     public float speed;
+    public float damage;
     public float destroyTime;
 
     void Start()

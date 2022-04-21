@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8234036063949420143}
   - component: {fileID: 4375733899077974162}
   - component: {fileID: 365182712468342084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (1)
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 5225570092011984573}
   - component: {fileID: 8371700867782494581}
   - component: {fileID: 4177441965782708081}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (3)
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 8320357931376231742}
   - component: {fileID: 4294733653035586442}
   - component: {fileID: 980105355924389517}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8683359013749190359}
   - component: {fileID: 4953608527139070902}
   - component: {fileID: 3302475513004801815}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (4)
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 8736456378116485629}
   - component: {fileID: 9108646506107603938}
   - component: {fileID: 24389430064974388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square (2)
   m_TagString: Ammo
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8130486162129286719}
   - component: {fileID: 884153292859271401}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ammoShootgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,4 +769,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  damage: 1
   destroyTime: 5

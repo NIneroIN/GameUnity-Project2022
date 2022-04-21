@@ -5,6 +5,7 @@ using UnityEngine;
 public class AmmoPistol : MonoBehaviour
 {
     public float speed;
+    public float damage;
     public float destroyTime;
 
     void Start()
@@ -20,11 +21,11 @@ public class AmmoPistol : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("GroundDetect") && !collision.CompareTag("Ladder"))
+        if (!collision.CompareTag("Player") && !collision.CompareTag("GroundDetect") && !collision.CompareTag("BulletTransparent"))
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Enemy>().TakeDamage();
+                collision.GetComponent<Enemy>().TakeDamage(damage);
             }
             DestroyAmmo();
         }
